@@ -1,0 +1,74 @@
+tomcat installation steps
+1)sudo apt install openjdk-11-jdk
+2)sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+3)wget -c https://downloads.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.tar.gz
+4)sudo tar xf apache-tomcat-9.0.84.tar.gz -C /opt/tomcat
+5)sudo ln -s /opt/tomcat/apache-tomcat-9.0.84 /opt/tomcat/updated
+6)sudo chown -R tomcat: /opt/tomcat/*
+7)sudo sh -c 'chmod +x /opt/tomcat/updated/bin/*.sh'
+8)sudo vi /etc/systemd/system/tomcat.service:
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+Environment="JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64"
+Environment="CATALINA_PID=/opt/tomcat/updated/temp/tomcat.pid"
+Environment="CATALINA_HOME=/opt/tomcat/updated/"
+Environment="CATALINA_BASE=/opt/tomcat/updated/"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+Environment="JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
+
+ExecStart=/opt/tomcat/updated/bin/startup.sh
+ExecStop=/opt/tomcat/updated/bin/shutdown.sh
+
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+9)sudo systemctl daemon-reload
+10)sudo systemctl start tomcat
+11)sudo vi /opt/tomcat/updated/conf/tomcat-users.xml
+<tomcat-users>
+<!--Comments-->
+<role rolename="admin-gui"/>
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<user username="admin" password="admin_password" roles="admin-gui,manager-script,manager-status,manager-jmx,manager-gui"/>
+</tomcat-users>
+12)sudo vi /opt/tomcat/updated/webapps/manager/META-INF/context.xml
+<ContextantiResourceLocking="false" privileged="true" >
+
+. . .
+
+<!--
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+. . .
+
+</Context>
+13)sudo vi /opt/tomcat/updated/webapps/host-manager/META-INF/context.xml
+<ContextantiResourceLocking="false" privileged="true" >
+
+. . .
+
+<!--
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+. . .
+
+</Context>
+13)systemctl restart tomcat
+14)browser--> ipadrress:8080
