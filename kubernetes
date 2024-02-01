@@ -19,3 +19,5 @@ kubectl describe pod nginx  --> to know more about a particular pod
 
 - kubernetes uses yaml files as inputs for the creation of objects such as pods, replicas, deployment services, etc.
 
+- group of pods --> Replica set
+- group of nodes --> cluster or node cluster
