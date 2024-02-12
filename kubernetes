@@ -92,4 +92,5 @@ spec:   -----------------------------------------------> Replica Set
 kubectl replace -f replicaset-definition.yml -----> to update definition file
 kubectl scale --replicas=6 -f replicaset-definition.yml ---> to scale the replications
 kubectl scale --replicas=6 replicaset(type) myapp-replicaset(name) 
+kubectl delete replicaset myapp-replicaset(name) -----> also delete underlying PODs
 
