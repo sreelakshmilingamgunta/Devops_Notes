@@ -16,7 +16,7 @@ kubectl run nginx --image=nginx  --> to create a pod (here nginx is a pod name)
 kubectl get pods  --> to know how many pods are running
 kubectl get pods -o wide  --> to get more information about the pods
 kubectl describe pod nginx  --> to know more about a particular pod
-kubectl create -f pod-defenition.yml --> to create a pds or containers using yam script file
+kubectl create -f pod-defenition.yml --> to create a pds or containers using yam script file  --> apply
 
 
 - kubernetes uses yaml files as inputs for the creation of objects such as pods, replicas, deployment services, etc.
