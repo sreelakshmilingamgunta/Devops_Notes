@@ -17,9 +17,46 @@ kubectl get pods  --> to know how many pods are running
 kubectl get pods -o wide  --> to get more information about the pods
 kubectl describe pod nginx  --> to know more about a particular pod
 kubectl create -f pod-defenition.yml --> to create a pds or containers using yam script file  --> apply
+kubectl run <pod name> --image=<image name> --dry-run=client -o yaml ---> to generate yaml script for creating pod using image
 
 
 - kubernetes uses yaml files as inputs for the creation of objects such as pods, replicas, deployment services, etc.
 
 - group of pods --> Replica set
 - group of nodes --> cluster or node cluster
+
+
+#creating pod using yaml script ? 
+
+apiVersion: v1
+kind: Pod
+metadata: 
+    name: myapp-pod
+    labels:
+        app: my-app
+        type: front-end
+spec:
+    containers:
+        - name: nginx
+          image: nginx
+
+# creating Replica Set using Yaml script ? 
+
+apiVersion: v1
+kind: ReplicationController
+metadata: --------------------------------------------> ReplicaController Meta Data
+    name: myapp-rc
+    labels:
+        app: myapp
+        type: front-end
+spec:   -----------------------------------------------> ReplicaController Spec
+    template:
+        metadata: --------------------------------------> Pod Meta Data
+            name: myapp-pod
+            labels:
+                app: my-app
+                type: front-end
+        spec: --------------------------------------------> Pod Spec
+           containers:
+                - name: nginx
+                  image: nginx
