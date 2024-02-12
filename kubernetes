@@ -40,7 +40,7 @@ spec:
         - name: nginx
           image: nginx
 
-# creating Replica Set using Yaml script ? 
+# creating Replica Controllers using Yaml script ? 
 
 apiVersion: v1
 kind: ReplicationController
@@ -60,3 +60,36 @@ spec:   -----------------------------------------------> ReplicaController Spec
            containers:
                 - name: nginx
                   image: nginx
+    replicas: 3
+kubectl get replicationcontroller   -->  to view created replica controllers 
+
+# creating Replica Set usinng yaml script
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: --------------------------------------------> Replica SetMeta Data
+    name: myapp-replicaset
+    labels:
+        app: myapp
+        type: front-end
+spec:   -----------------------------------------------> Replica Set
+    template:
+        metadata: --------------------------------------> Pod Meta Data
+            name: myapp-pod
+            labels:
+                app: my-app
+                type: front-end
+        spec: --------------------------------------------> Pod Spec
+           containers:
+                - name: nginx
+                  image: nginx
+    replicas: 3
+    selector:  ----------------------------> identify what pods fall under it
+        matchLabels: ----------------------> matches the labels specified under it to the labels on the pods.
+            type: front-end
+
+
+kubectl replace -f replicaset-definition.yml -----> to update definition file
+kubectl scale --replicas=6 -f replicaset-definition.yml ---> to scale the replications
+kubectl scale --replicas=6 replicaset(type) myapp-replicaset(name) 
+
