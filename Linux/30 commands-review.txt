@@ -1,0 +1,113 @@
+1.last :  display the information about the users on the system 
+last -n 10  ---> displays last 10 logins 
+last -i  ---> displays ip addresses associated with the logins
+last -F  ---> displays full information like hostname and ip address of the logins
+last -R  ---> displays hostname in a log file in a reverse order particularly to know about the recent logins.
+last -t <YYYYMMDDHHMMSS> ---> Show logins that occurred after the specified date and time. You need to provide the date and time in the format YYYYMMDDHHMMSS
+
+
+2.history    -  display command history
+history n --->display last n commands ex: history 4
+history -c ---> clear entire command history 
+history -w ---> for writing current command history to the ~/.bash_history file.
+history -d <offset> ---> delete specific command from the history ex : -d 5
+Ex: history | head 4  ---> to see first 4 commands in the history
+history -s <string>  ---> Add the specified string to the end of the history list without executing it. 
+This can be useful for adding comments or notes to your history.
+
+
+3.echo  — Print a message to the terminal
+
+
+4.lshw – displays hardware information
+lshw -short ---> Displays a shorter, more concise summary of hardware information.
+lshw -c cpu ---> To display information only about the CPU
+lshw -c memory ---> To display information about the memory (RAM).
+lshw -c storage ---> To display information about storage devices (hard drives, SSDs, etc.)
+lshw -c network ---> To display information about network interfaces.
+
+5. lspci — Displays information about PCI buses and devices.
+
+6.lsusb — Displays information about USB buses and devices.
+
+7.hwinfo — Displays detailed hardware information.
+
+8.lscpu  - displays information about cpu
+
+9. free — Displays memory usage.
+free -h or free --human ---> Displays memory usage statistics in a human-readable format, 
+with units in megabytes and gigabytes.
+free -m ---> Shows memory usage statistics in megabytes.
+Free -g ---> Displays memory usage statistics in gigabytes.
+Free –l ---> displays low level memory usage
+
+10. vmstat ---> Displays system memory, processor, and I/O statistics.
+11. uptime ---> Displays system uptime and load averages.
+The system's uptime, which indicates how long the system has been running since its last reboot.
+uptime –p ---> Displays the system's uptime in a more human-readable format, showing the time in years, months, days, hours, and minutes.
+
+12.systemctl : It is the primary tool for controlling and managing system services and units in systems that use systemd as their init system
+[init system is the first process that starts when a Linux operating system boots and is responsible for initializing the system, launching services, and managing the system's runtime environment.]
+[Systemd is an init system and service manager for Linux operating systems. It serves as the first process that is executed when the Linux kernel boots and is responsible for initializing the system, managing system services, and supervising processes.]
+systemctl show service-name ---> to see the information about particular service
+systemctl list-units ---> This command displays a list of all active units (services, sockets, timers, etc.)
+systemctl list-units --all  ---> This command lists all loaded units, including those that are inactive.
+systemctl list-units --type=service ---> This command lists only service units, providing a focused view of services.
+systemctl status service-name ---> to see the status of the service
+systemctl start service-name
+systemctl stop service-name
+systemctl restart service-name
+systemctl reload service-name ---> 
+This command instructs the service to reload its configuration without stopping it. This is useful for services that support dynamic configuration changes.
+systemctl enable service-name ---> This command configures a service to start automatically at system boot
+systemctl disable service-name ---> 
+This command prevents a service from starting automatically at system boot.
+
+13.locate - used to quickly and efficiently search for files and directories on your system.
+locate -i <filename> ---> to ignore case sensitive
+locate -l 5 <filename> ---> to limit the search upto 5 or 6 
+locate -r <~data> ---> To use regular expressions to find all files and directories that start with "data" followed by any characters
+
+14.Kill: This command is used to terminate processes manually. This command basically, will send a signal that terminates it.
+kill CONT 0000 ---> resume a stopped process
+kill stop 0000 ---> stop a process
+kill TERM 0000 ---> termination
+kill KILL 0000 ---> forcefull termination
+kill INT 0000 ---> interrupt
+
+
+15.ps aux ---> to list all the processes
+
+16.Htop --> is a powerfull tool for monitoring system performance, managing processes and diagnosing issues in realtime.
+htop -p RES ---> we can sort by memory usage
+htop -u username ---> processses runned by specific use
+
+17.ln ---> creating extra names for a file or directory.
+ln <original file> <target file> ---> to create a hard links between two files (if original file changes it will effect target file too)
+ln -s <original file> <target file> ---> to create symbolic links bbetween two files
+
+18.cal ---> Display a calendar
+cal [options] [month] [year]
+cal -3 -y ---> To show a three-column calendar for the whole year, you can use
+cal 4 2023  ---> To show the calendar for a specific month and year (e.g., April 2023), you can specify the month and year
+
+
+19.tee — Redirect output to multiple files
+ls -lh | tee <filename >
+echo "message" | tee -a <filename> ---> to redirect and append that message to that file.
+
+
+20.zip ---> to compress the files with .zip extension
+zip <zipname to save> < filename > 
+
+21.unzip ---> to unzip compressed files.
+
+22.at --> to shedule one task
+at -l ---> to list all scheduled at time tasks to run
+at -d <job number> ---> particula job to delete
+at -m ---> send email to user when job has been executed 
+at -f script_file.txt TIME   --->  Read the command to be executed from a file. This is useful for specifying a script to run at a later time.
+
+23.less --->  allows you to view text files and navigate through their content
+less 1.txt 2.txt ---> to view multiple files sequently :n for next file :p for previous file
+
