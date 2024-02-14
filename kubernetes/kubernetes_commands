@@ -1,5 +1,3 @@
-
-
 kubectl run nginx --image=nginx  --> to create a pod (here nginx is a pod name)
 kubectl get pods  --> to know how many pods are running
 kubectl get pods -o wide  --> to get more information about the pods
