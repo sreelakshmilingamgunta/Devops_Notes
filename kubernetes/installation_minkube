@@ -34,8 +34,6 @@ minikube start --driver=docker
 
 sudo usermod -aG docker $USER && newgrp docker
 
-sudo usermod -aG docker $USER && newgrp docker
-
 
 # to see how many clusters are running  inside minikube
 
