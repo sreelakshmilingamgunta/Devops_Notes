@@ -1,8 +1,0 @@
-POD
-  - usually 1 application per pod
-  - Each pod gets its own IP address
-  - New IP on re-creation
-SERVICE
-  - static or permanant IP address thta can be attached to each pods
-  - life cycle of service and pod not connected, if pod dies service will stay
-External Service - is a sevive that opens the communication from external sources.
