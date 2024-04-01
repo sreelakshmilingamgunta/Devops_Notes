@@ -43,6 +43,7 @@ Master - Managing nodes is done by master
  - 4. etcd - etcd is a distributed key-value store used to store cluster state and configuration.
            - cluster changes get stored in the key-value pair
            - cluster state information which is used for master processes to communicate with work processes vice versa.
+           - etcd holds current status of any kubernetes component
 
 * master processes are more important but they actually have a less load of work, so they need less resources like cpu| ram| storage
 * worker node do the actual job of running those nodes therefore they need more resources 
@@ -54,11 +55,23 @@ Minikube - is a one node cluster that runs in a virtual box.
 Kubectl - command line tool for kubernetes cluster
 ! virtualization on your machine needed
 
-* Deployment - blue print for creating pod.
-* Replicaset - deployment manages replicaset and manages all the replicas of the pods.
+* Deployment - blue print for creating pod. deployment manages pods
+* Replicaset - manages all the replicas of the pods.
 * Pod - an abstraction of containers.
 
+Attributes of 'spec' are specific to kind
 
+Each configuration file has 3 parts
+ - 1. Metadata - Contains meta data about resources, suach as it's Name
+ - 2. Spec - This section specifies the desired state for the resource.
+           - replicas - this states desired number of pods to replicate.
+           - selector - This specifies how to select the pods targeted by this deployment
+           - template - This section contains the pod template used to create new pods.
+                     - metadata.labels - This specifies the labels to apply to the pods.
+                     - spec.containers - This specifies the containers to run in the pods
+ - 3. status - automatically generated and added by kubernetes.
+
+connection between deployment and services made through selector labels
 
 
 
