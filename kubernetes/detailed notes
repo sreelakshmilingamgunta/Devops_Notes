@@ -1,10 +1,33 @@
-POD
+ POD
   - usually 1 application per pod
   - Each pod gets its own IP address
   - New IP on re-creation
 SERVICE
   - static or permanant IP address thta can be attached to each pods
   - life cycle of service and pod not connected, if pod dies service will stay
+  - Load Balancer - service actually catches the request and forwatd that to pods
 External Service - is a sevive that opens the communication from external sources.
 Ingress --> Service
+Ingress - Route traffic into the clusters
 ConfigMap - usually contains configuration data like url of database and other services that they use.
+            ! Don't put credentials into configmap - for these kubernetes has a component secrete
+Secret - just like configmap used to store secret data
+
+inorder to create the 2nd replica of 'my-app', you wouldn't create a 2nd pod but instead you'll define blueprints for 'my-app' pod and specify how many replicas that pod you need to run 
+that blue print we'll call it as Deployment.
+
+pod is layer of abstraction on top of containers
+deployments are layer of abstraction on top of pods
+  - for stateless applications
+StatefulSet - 
+  - for statefull apps like sql, mongoDB, elastic
+  - databases should be created using statefulset 
+  - deploying sttefulset is not easy
+  - DB are often hosted on outside of the cluster
+
+Node - Each node has multiple pods in it
+worker node do actual work
+3 processes must be installed in each pod used to that are used to shedule and manage.
+  - 1. container runtime - docker, cri-o, containerd
+  - 2. kubelet interacts with both container and node. and kubelet starts the pods with a container inside.
+  - 3. Kubeproxy - is a network proxy that maintains network rules on nodes. It enables communication between services inside the cluster and external clients.
