@@ -31,3 +31,21 @@ worker node do actual work
   - 1. container runtime - docker, cri-o, containerd
   - 2. kubelet interacts with both container and node. and kubelet starts the pods with a container inside.
   - 3. Kubeproxy - is a network proxy that maintains network rules on nodes. It enables communication between services inside the cluster and external clients.
+Master - Managing nodes is done by master
+4 processes that runs on master node
+ - 1. api-server - gets the intial request of any update into the cluster or even the query.
+              - also acts as a gate keeper for authentication
+              - only one entry point to the cluster
+ - 2. scheduler - on which worker node the new pod should be sheduled?
+             - The scheduler assigns pods to nodes based on resource availability and other constraints.
+ - 3. controller-manager - detects cluster state changes
+                         - which regulate the state of the cluster, such as node and replication controllers.
+ - 4. etcd - etcd is a distributed key-value store used to store cluster state and configuration.
+           - cluster changes get stored in the key-value pair
+           - cluster state information which is used for master processes to communicate with work processes vice versa.
+
+
+
+
+
+
