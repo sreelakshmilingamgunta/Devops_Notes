@@ -53,7 +53,12 @@ Minikube - is a one node cluster that runs in a virtual box.
          - for testing kubernets on local
 Kubectl - command line tool for kubernetes cluster
 ! virtualization on your machine needed
-* Replicaset - is managing replica's of a pod
+
+* Deployment - blue print for creating pod.
+* Replicaset - deployment manages replicaset and manages all the replicas of the pods.
+* Pod - an abstraction of containers.
+
+
 
 
 
