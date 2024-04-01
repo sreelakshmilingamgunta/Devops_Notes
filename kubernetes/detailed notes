@@ -44,6 +44,18 @@ Master - Managing nodes is done by master
            - cluster changes get stored in the key-value pair
            - cluster state information which is used for master processes to communicate with work processes vice versa.
 
+* master processes are more important but they actually have a less load of work, so they need less resources like cpu| ram| storage
+* worker node do the actual job of running those nodes therefore they need more resources 
+Minikube - is a one node cluster that runs in a virtual box.
+         - one node cluster where the master processes and worker processes both run on one node.
+         - creates a virtual box in our local
+         - node runs in virtual box
+         - for testing kubernets on local
+Kubectl - command line tool for kubernetes cluster
+! virtualization on your machine needed
+
+
+
 
 
 
