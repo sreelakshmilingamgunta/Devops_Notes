@@ -74,26 +74,25 @@ Each configuration file has 3 parts
 connection between deployment and services made through selector labels
 
 Name Space - 
- - organize resources in name space
- - virtual cluster inside a cluster
+ - virtual cluster inside a physical cluster
+ - It's a way to divide and organize resources within a Kubernetes cluster.
 4 default Namespaces
- - kube-system - do not create and modify on kube-system
-               - system processe
-               - master and kubectl processe
- - kube-public - contains publicely accessible data
-               - conatins cluster information accessible even without authentication.
-               - a configmap which contains cluster information
- - kube-node-lease - heart beat of nodes
-                   - each node has associated lease object in node
-                   - determines availability of a node
- - default - resources you create are located here
-           - 
+ - 1.kube-system - do not create and modify on kube-system
+                 - system processe
+                 - master and kubectl processe
+ - 2.kube-public - contains publicely accessible data
+                 - conatins cluster information accessible even without authentication.
+                 - a configmap which contains cluster information
+ - 3.kube-node-lease - heart beat of nodes
+                     - each node has associated lease object in node
+                     - determines availability of a node
+ - 4.default - resources you create are located here
+     
+----- INGRESS -------
+Ingress provides routing rules to manage external users’ access to the services in a Kubernetes cluster, typically via HTTPS/HTTP.
+With Ingress, you can easily set up rules for routing traffic without creating a bunch of Load Balancers or exposing each service on the node.
 
-
-
-
-
-
+You must have an Ingress controller to satisfy an Ingress. 
 
 
 
