@@ -6,7 +6,12 @@ kubectl delete deployment <deployment Name>
 kubectl get nodes| pods| services| deployment| replicaset   --> To see status different kubenetes components
 kubectl get pods -o wide
 
-----> Debugging Pods <-----
+-----> Name Space <--------
+kubectl create namespace <NameSpaceName> --> to create a new name space
+kubectl apply -f <configurationFile> --namespace=<NameSpace> --> to cerate resources inside a name space
+kubectl get all -n <NameSpace> --> To see all the resources under particular Name space
+
+-----> Debugging Pods <-------
 kubectl logs <podName>  --> Logs to console
 kubectl describe pod <podName> --> Get info about pod
 kubectl exec -it <podName> -- bin/bash --> We can debug, To get interactive Terminal
