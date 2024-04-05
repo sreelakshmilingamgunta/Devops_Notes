@@ -95,6 +95,10 @@ With Ingress, you can easily set up rules for routing traffic without creating a
 You must have an Ingress controller to satisfy an Ingress. 
 
 
+Resource Quota is like a limit or boundary set on how much of the computing resources (like CPU and memory) a group of containers or namespaces 
+can use within a cluster.
+
+
 
 
 
