@@ -2,7 +2,7 @@ Azure: Uses ARM templates for infrastructure as code.
 AWS: Uses CloudFormation templates for infrastructure as code.
 Google Cloud Platform: Uses Deployment Manager and Deployment Manager templates for infrastructure as code😊
 
-Why do people use Terraform if Iac tools already exists in Cloud Providers?
+**Why do people use Terraform if Iac tools already exists in Cloud Providers?
 
 while cloud providers offer their own tools for managing infrastructure as code
 
