@@ -60,7 +60,7 @@ spec:   -----------------------------------------------> ReplicaController Spec
     replicas: 3
 kubectl get replicationcontroller   -->  to view created replica controllers 
 
-# creating Replica Set usinng yaml script
+# creating Replica Set using yaml script
 
 apiVersion: apps/v1
 kind: ReplicaSet
