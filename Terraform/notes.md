@@ -33,6 +33,6 @@ name - name of the azure resource you want to create
 provider "azurerm" {
   features {}
 }
-
+```
 
 
