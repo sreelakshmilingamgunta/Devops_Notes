@@ -21,7 +21,8 @@ while cloud providers offer their own tools for managing infrastructure as code
 ```resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
-}```
+}
+
 resource - keyword in terraform refers to resource block
 "azurerm_resource_group" - Resource type, specifically targetted resource group
 "example" - local name given to the resource block
