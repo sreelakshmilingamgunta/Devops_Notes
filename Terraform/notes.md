@@ -30,8 +30,9 @@ resource - keyword in terraform refers to resource block
 name - name of the azure resource you want to create
 ```
 ```
+# Define Azure Provider [ mandatory field to create resources ]
 provider "azurerm" {
-  features {}
+  features {}         
 }
 ```
 
