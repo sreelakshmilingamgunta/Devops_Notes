@@ -1,4 +1,4 @@
-##install kubectl on linux
+install kubectl on linux
 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
