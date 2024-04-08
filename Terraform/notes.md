@@ -18,7 +18,8 @@ while cloud providers offer their own tools for managing infrastructure as code
       It also provides features like resource locking to prevent concurrent modifications and state versioning for collaboration and auditing purposes.
 
 
-```resource "azurerm_resource_group" "example" {
+```
+resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
 }
