@@ -28,3 +28,9 @@ resource - keyword in terraform refers to resource block
 "example" - local name given to the resource block
 name - name of the azure resource you want to create
 
+'''provider "azurerm" {
+  features {}
+}
+
+
+
