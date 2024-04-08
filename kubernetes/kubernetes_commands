@@ -1,29 +1,26 @@
-- Container is like a lightweight, standalone executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, and system tools. 
-    containers provide consistency across different environments and make it easy to deploy and run applications.
+kubectl run <podName> --image=<ImageName>   --> to create a pod 
+kubectl create deployment <podName> --image=<imageName> --> To create a deployment
+kubectl edit deployment [deployment Name] --> To update the deployment
+kubectl delete deployment <deployment Name>
 
-- Orchestration - managing and coordinating multiple containers to work together seamlessly. Kubernetes helps automate tasks like deploying, scaling, and managing containerized applications.
+kubectl get nodes| pods| services| deployment| replicaset   --> To see status different kubenetes components
+kubectl get pods -o wide
 
-- Node is an individual machine (physical or virtual) that is part of a cluster. Nodes are responsible for running containers and executing tasks assigned by the control plane, 
-    making them the worker machines in the Kubernetes system.
+-----> Name Space <--------
+kubectl create namespace <NameSpaceName> --> to create a new name space
+kubectl apply -f <configurationFile> --namespace=<NameSpace> --> to cerate resources inside a name space
+kubectl get all -n <NameSpace> --> To see all the resources under particular Name space
 
-- Cluster is a set of nodes (machines) that work together to run containerized applications. It includes a control plane for managing the cluster and nodes that execute tasks. 
-    Clusters provide a unified environment for deploying and managing applications at scale.
+-----> Debugging Pods <-------
+kubectl logs <podName>  --> Logs to console
+kubectl describe pod <podName> --> Get info about pod
+kubectl exec -it <podName> -- bin/bash --> We can debug, To get interactive Terminal
 
-- Pod is the smallest deployable unit in Kubernetes, representing a single instance of a running process. Pods can contain one or more containers that share resources and a network namespace.
-    They are the basic building blocks of applications in Kubernetes.
-
-kubectl run nginx --image=nginx  --> to create a pod (here nginx is a pod name)
-kubectl get pods  --> to know how many pods are running
-kubectl get pods -o wide  --> to get more information about the pods
-kubectl describe pod nginx  --> to know more about a particular pod
-kubectl create -f pod-defenition.yml --> to create a pds or containers using yam script file  --> apply
-kubectl run <pod name> --image=<image name> --dry-run=client -o yaml ---> to generate yaml script for creating pod using image
-
+kubectl apply -f <configuration File> --> To create a deployment using configuration file
 
 - kubernetes uses yaml files as inputs for the creation of objects such as pods, replicas, deployment services, etc.
 
-- group of pods --> Replica set
-- group of nodes --> cluster or node cluster
+
 
 
 #creating pod using yaml script ? 
