@@ -35,3 +35,35 @@ provider "azurerm" {
   features {}         
 }
 ```
+
+>✅ mandatory resorces that vm create along with it's creation
+      - Public Ip adress  
+      - Disk  
+      - Network Interface  
+      - Network Security Group
+      - Virtual Network
+
+variables - Input and output variables in Terraform are essential for parameterizing and sharing values within your Terraform configurations and modules.   
+They allow you to make your configurations more dynamic, reusable, and flexible.  
+      input variables - allows you to pass the values  
+      output variables - allows you to print the variables  
+# Creating a Resource Group using Variables
+```
+variable "resource_group_name" {
+    description = "resource group name"  
+}
+variable "location" {
+    description = "location"
+  
+}
+provider "azurerm" {
+    features {}
+    
+}
+resource "azurerm_resource_group" "local-rg" {
+    name = var.resource_group_name
+    location = var.location
+}
+```
+
+
