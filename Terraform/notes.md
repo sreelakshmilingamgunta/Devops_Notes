@@ -83,7 +83,25 @@ resource "azurerm_resource_group" "local-rg" {
 rg_name = "sreelakshmi-rg"
 loc = "east us"
 ```
-
-
+# Create a Resource group Print subscription Id of that resource group is created [ outputs.tf ]
+```
+# main.tf
+provider "azurerm" {
+        features{}
+}
+variable "rg_name" {}
+variable "loc" {}
+resource "azurerm_resource_group" "local-rg"{
+        name = var.rg_name
+        location = var.loc
+}
+data "azurerm_subscription" "current" {}
+```
+```
+# outputs.tf
+output "sub_id" {
+  value=data.azurerm_subscription.current.subscription_id
+}
+```
 
 
