@@ -65,7 +65,7 @@ resource "azurerm_resource_group" "local-rg" {
     location = var.location
 }
 ```
-# Creating a Resource Group using variables.tfvars file  
+# Creating a Resource Group using terraform.tfvars file  
 ```
 #main.tf
 provider "azurerm" {
@@ -79,11 +79,13 @@ resource "azurerm_resource_group" "local-rg" {
 }
 ```
 ```
-# variables.tfvars
+# terraform.tfvars
 rg_name = "sreelakshmi-rg"
 loc = "east us"
 ```
-# Create a Resource group Print subscription Id of that resource group is created [ outputs.tf ]
+terraform plan -var-file="<name> .tfvars"--> if we are gave different name for .tfvar file instead of terraform.tfvar   
+
+# Create a Resource group and Print subscription Id of that resource group is created [ outputs.tf ]
 ```
 # main.tf
 provider "azurerm" {
@@ -103,5 +105,10 @@ output "sub_id" {
   value=data.azurerm_subscription.current.subscription_id
 }
 ```
+
+whenever we are writting modules we no need to create variables.tfvar file
+
+
+
 
 
