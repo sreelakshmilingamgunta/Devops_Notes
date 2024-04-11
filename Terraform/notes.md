@@ -65,5 +65,25 @@ resource "azurerm_resource_group" "local-rg" {
     location = var.location
 }
 ```
+# Creating a Resource Group using variables.tfvars file  
+```
+#main.tf
+provider "azurerm" {
+      features{}
+}
+variable "rg_name" {}
+variable "loc" {}
+resource "azurerm_resource_group" "local-rg" {
+      name = var.rg-name
+      location = var.loc
+}
+```
+```
+# variables.tfvars
+rg_name = "sreelakshmi-rg"
+loc = "east us"
+```
+
+
 
 
