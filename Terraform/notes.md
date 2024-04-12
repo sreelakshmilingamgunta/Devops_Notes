@@ -106,7 +106,12 @@ output "sub_id" {
 }
 ```
 
-whenever we are writting modules we no need to create variables.tfvar file
+whenever we are writting modules we no need to create variables.tfvar file  
+  
+This command will force Terraform to download the latest changes from the remote source  
+```
+terraform get -update
+```
 
 
 
