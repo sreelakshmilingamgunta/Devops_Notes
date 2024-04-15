@@ -118,7 +118,56 @@ terraform get -update
 
 setting ssh keys for Github  
 [ ls -al ~/.ssh ] --> to see all the ssh files  
-[ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" ] --> To generate ssh keys  
+[ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" ] --> To generate ssh keys   
+
+
+# To create a Storage Account  
+```
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_storage_account" "example" {
+  name                     = "backend12345"
+  resource_group_name      = "sreelakshmi"  // Provide the name of the existing resource group here
+  location                 = "eastus"       // Provide the location of the existing resource group here
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+
+  tags = {
+    environment = "staging"
+  }
+}
+``` 
+
+
+# To Create a remote Backend  
+```
+# backend.tf file
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "sreelakshmi"
+    storage_account_name = "backend12345"
+    container_name       = "container1"
+    key                  = "/home/Sreelakshmi_123/terraform/terraform.tfstate"
+}
+}
+
+#
+main.tf 
+provider "azurerm" {
+        features {}
+}
+resource "azurerm_resource_group" "example" {
+        name = "backend-rg"
+        location = "east us"
+        tags = {
+                environment = "staging"
+                department = "devops"
+}
+}
+```  
+
 
 
 
