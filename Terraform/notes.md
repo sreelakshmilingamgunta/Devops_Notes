@@ -2,6 +2,9 @@
 - AWS: Uses CloudFormation templates for infrastructure as code.
 - Google Cloud Platform: Uses Deployment Manager and Deployment Manager templates for infrastructure as code😊
 
+[Install azure CLI]   https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt  
+[Install Terraform]   https://developer.hashicorp.com/terraform/install#linux
+
 Why do people use Terraform if Iac tools already exists in Cloud Providers🙄?
 
 while cloud providers offer their own tools for managing infrastructure as code
