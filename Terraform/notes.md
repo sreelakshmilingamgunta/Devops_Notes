@@ -116,6 +116,11 @@ This command will force Terraform to download the latest changes from the remote
 terraform get -update
 ```
 
+setting ssh keys for Github  
+[ ls -al ~/.ssh ] --> to see all the ssh files  
+[ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" ] --> To generate ssh keys  
+
+
 
 
 
