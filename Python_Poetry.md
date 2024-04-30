@@ -16,9 +16,11 @@ If you want to add dependencies to your project, you can specify them in the [to
 poetry install`  
 or   
 use 'add' command  to add dependencies  
-`poetry add <package Name> `
+`poetry add <package Name> `  
 
-
+`poetry add pytest --group test ` --> Preferred way to add dependencies to group if the group doesn't alreasy exists, it will be created automatically.  
+ ` poetry show ` --> to see all the installed packages.  
+- Poetry provides a way to organize your dependencies by **groups**. For instance, you might have dependencies that are only needed to test your project or to build the documentation.  
 
 
 
@@ -39,3 +41,5 @@ my_name_script = "Name:main"
 ```
 `>> poetry run my_name_script
 `
+
+
