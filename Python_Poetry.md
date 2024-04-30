@@ -39,6 +39,8 @@ if __name__ == "__main__":
 [tool.poetry.scripts]
 my_name_script = "Name:main"
 ```
+This tells Poetry that when the script **my_name_script** is executed, it should call the **main** function from the **Name** module.  
+
 `>> poetry run my_name_script
 `
 
