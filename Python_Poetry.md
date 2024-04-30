@@ -12,6 +12,8 @@ it will create a project and folder with new-project name if we want to specify 
 poetry new My-project --name My-folder
 ```
 If you want to add dependencies to your project, you can specify them in the [tool.poetry.dependencies] section in pyproject.toml  
+`
+poetry install`  
 or   
 use 'add' command  to add dependencies  
 `poetry add <package Name> `
