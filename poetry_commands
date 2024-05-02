@@ -40,5 +40,7 @@ my-script = "my_module:main"
 >> poetry env info --path --> If you only want to know the path to the virtual environment.
 >> poetry env list --> listing the environments associated to project
 >> poetry env remove /full/path/to/python --> to delete the existing environment
+>> poetry env remove --all --> to delete all the virtual environements once
+>> 
 
 
