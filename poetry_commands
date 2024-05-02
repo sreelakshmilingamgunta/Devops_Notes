@@ -1,0 +1,18 @@
+* creating new project
+  >> poetry new
+  >> poetry new <My-folder-name> --name <My-projct -name>
+  >> poetry init --> if we want to initialize project in existing folder
+* Installing dependencies
+  >> poetry install --> reads the pyproject.toml file from the current project, resolves the dependencies, and installs them
+  >> poetry install --without <group_name> --> If you want to exclude one or more dependency groups for the installation
+  >> poetry install --with <group_name> --> You can also select optional dependency groups with the --with option.
+  >> poetry install --only <group_name> --> To install only specific from specific group
+  >> poetry install --sync --> To synchronize your environment – and ensure it matches the lock file
+>> poetry update --> Inorder to get the latest versions
+>> poetry add <package_name> --> adds required packages
+>> poetry remove <package_name> --> removes packages from installed packages
+>> poetry remove <package_name> --group <geoup_name> --> removes packages from different groups
+>> poetry show --> to list all the available packages
+>> poetry show <package> --> to see information about specific package
+>> 
+  
