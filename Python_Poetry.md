@@ -22,7 +22,9 @@ use 'add' command  to add dependencies
  ` poetry show ` --> to see all the installed packages.  
 - Poetry provides a way to organize your dependencies by **groups**. For instance, you might have dependencies that are only needed to test your project or to build the documentation.  
 
-
+-  You typically run **poetry build**when you want to package your project for distribution or before publishing it to a package repository.
+-  You run **poetry publish** after running **poetry build** to publish your package to a package repository. You need appropriate credentials and permissions to publish packages to the repository.
+-  In summary, **poetry build** is used to create distributable package formats from your Python project, while **poetry publish** is used to upload these packages to a package repository for distribution to other users. 
 
 **How Run Scripts?**
 ```
