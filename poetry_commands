@@ -2,6 +2,7 @@
   >> poetry new
   >> poetry new <My-folder-name> --name <My-projct -name>
   >> poetry init --> if we want to initialize project in existing folder
+>> poetry version
 * Installing dependencies
   >> poetry install --> reads the pyproject.toml file from the current project, resolves the dependencies, and installs them
   >> poetry install --without <group_name> --> If you want to exclude one or more dependency groups for the installation
@@ -14,5 +15,30 @@
 >> poetry remove <package_name> --group <geoup_name> --> removes packages from different groups
 >> poetry show --> to list all the available packages
 >> poetry show <package> --> to see information about specific package
->> 
-  
+>> poetry build --> to package your project for distribution
+>> poetry publish --> after running poetry build to publish your package to a package repository
+>> poetry run python -V --> executes the given command inside the project’s virtualenv
+
+if you define script in the pyproject.toml file
+[tool.poetry.scripts]
+my-script = "my_module:main"
+
+>> poetry run my-script
+
+>> poetry list --> displays all the available Poetry commands.
+
+
+>> poetry self add poetry-plugin-export --> works exactly like the add command. However, is different in that the packages managed are for Poetry’s runtime environment.
+>> poetry self update --> works exactly like the update command. However, is different in that the packages managed are for Poetry’s runtime environment.
+>> poetry self show --<options> -->To show only additional packages that have been added via self add and their dependencies use
+
+* Managing environments :
+>> poetry env use /full/path/to/python
+>> poetry env use python3.7 --> If you have the python executable in your PATH you can use it:
+>> poetry env use system
+>> poetry env info --> If you want to get basic information about the currently activated virtual environment
+>> poetry env info --path --> If you only want to know the path to the virtual environment.
+>> poetry env list --> listing the environments associated to project
+>> poetry env remove /full/path/to/python --> to delete the existing environment
+
+
