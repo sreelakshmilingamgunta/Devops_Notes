@@ -25,7 +25,8 @@ poetry --version
   >> poetry install --only <group_name> --> To install only specific from specific group.  
   >> poetry install --sync --> To synchronize your environment – and ensure it matches the lock file.  
 >> poetry update --> Inorder to get the latest versions.  
->> poetry add <package_name> --> adds required packages.  
+>> poetry add <package_name> --> adds required packages.
+>> poetry add <package_name> --group <group_name> --> to add packages to specific group
 >> poetry remove <package_name> --> removes packages from installed packages.  
 >> poetry remove <package_name> --group <geoup_name> --> removes packages from different groups.  
 >> poetry show --> to list all the available packages.  
